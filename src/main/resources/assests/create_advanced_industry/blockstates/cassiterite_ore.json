@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "create_advanced_industry:block/cassiterite_ore"
+    }
+  }
+}

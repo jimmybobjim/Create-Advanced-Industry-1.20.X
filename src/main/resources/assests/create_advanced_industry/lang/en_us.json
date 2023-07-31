@@ -1,0 +1,8 @@
+{
+  "item.create_advanced_industry.raw_cassiterite": "Raw Cassiterite",
+  "item.create_advanced_industry.crushed_raw_cassiterite": "Crushed Raw Cassiterite",
+  "item.create_advanced_industry.crushed_washed_raw_cassiterite": "Crushed Washed Raw Cassiterite",
+  "item.create_advanced_industry.tin": "Tin",
+
+  "block.create_advanced_industry.cassiterite_ore": "Cassiterite Ore"
+}
