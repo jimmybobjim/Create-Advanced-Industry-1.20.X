@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "create_advanced_industry:tin_block"
+    }
+  ],
+  "result": {
+    "item": "create_advanced_industry:tin",
+    "count": 9
+  }
+}

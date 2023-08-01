@@ -2,6 +2,7 @@ package net.hudson.create_advanced_industry;
 
 import com.mojang.logging.LogUtils;
 import net.hudson.create_advanced_industry.block.ModBlocks;
+import net.hudson.create_advanced_industry.item.ModCreativeModeTabs;
 import net.hudson.create_advanced_industry.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -29,6 +30,8 @@ public class CreateAdvancedIndustry {
 
     public CreateAdvancedIndustry() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);

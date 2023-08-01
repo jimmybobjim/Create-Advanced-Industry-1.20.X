@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "create_advanced_industry:item/crushed_washed_raw_cassiterite"
-  }
-}
