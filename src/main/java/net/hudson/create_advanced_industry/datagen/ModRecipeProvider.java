@@ -46,11 +46,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
         */
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TIN.get(), 9)
+        /*ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TIN.get(), 9)
                 .requires(ModBlocks.TIN_BLOCK.get())
                 .unlockedBy("has_tin", inventoryTrigger(ItemPredicate.Builder.item().
                         of(ModBlocks.TIN_BLOCK.get()).build()))
-                .save(pWriter);
+                .save(pWriter);*/
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

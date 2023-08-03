@@ -13,9 +13,9 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, CreateAdvancedIndustry.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> COURSE_TAB = CREATIVE_MODE_TABS.register("course_tab",
+    public static final RegistryObject<CreativeModeTab> MOD_ORES = CREATIVE_MODE_TABS.register("mod_ores",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.TIN.get()))
-                    .title(Component.translatable("creativetab.course_tab")).displayItems((displayParameters, output) -> {
+                    .title(Component.translatable("creativetab.mod_ores")).displayItems((displayParameters, output) -> {
                         output.accept(ModItems.TIN.get());
                     }).build());
 

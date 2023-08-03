@@ -1,6 +1,7 @@
 package net.hudson.create_advanced_industry.datagen;
 
 import net.hudson.create_advanced_industry.CreateAdvancedIndustry;
+import net.hudson.create_advanced_industry.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -17,7 +18,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
+        simpleItem(ModItems.TIN);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
