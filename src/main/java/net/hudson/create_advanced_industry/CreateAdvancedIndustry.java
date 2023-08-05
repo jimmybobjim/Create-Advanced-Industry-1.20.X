@@ -2,9 +2,14 @@ package net.hudson.create_advanced_industry;
 
 import com.mojang.logging.LogUtils;
 import net.hudson.create_advanced_industry.block.ModBlocks;
+import net.hudson.create_advanced_industry.fluid.ModFluidTypes;
+import net.hudson.create_advanced_industry.fluid.ModFluids;
 import net.hudson.create_advanced_industry.item.ModCreativeModeTabs;
+import net.hudson.create_advanced_industry.item.ModItemProperties;
 import net.hudson.create_advanced_industry.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,6 +24,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
+import java.util.List;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(CreateAdvancedIndustry.MOD_ID)
@@ -35,6 +42,8 @@ public class CreateAdvancedIndustry {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -76,6 +85,16 @@ public class CreateAdvancedIndustry {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() -> {
+                ModItemProperties.addCustomItemProperties();
+
+
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_TIN_MOLTEN.get(), RenderType.translucent());
+                ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_TIN_MOLTEN.get(), RenderType.translucent());
+            });
+
+
+
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());

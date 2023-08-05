@@ -1,7 +1,10 @@
 package net.hudson.create_advanced_industry.item;
 
 import net.hudson.create_advanced_industry.CreateAdvancedIndustry;
+import net.hudson.create_advanced_industry.fluid.ModFluids;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -18,6 +21,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TIN = ITEMS.register("tin",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TIN_MOLTEN_BUCKET = ITEMS.register("tin_molten_bucket",
+            () -> new BucketItem(ModFluids.SOURCE_TIN_MOLTEN, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

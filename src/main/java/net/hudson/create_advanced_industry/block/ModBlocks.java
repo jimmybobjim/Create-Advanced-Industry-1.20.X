@@ -1,11 +1,13 @@
 package net.hudson.create_advanced_industry.block;
 
 import net.hudson.create_advanced_industry.CreateAdvancedIndustry;
+import net.hudson.create_advanced_industry.fluid.ModFluids;
 import net.hudson.create_advanced_industry.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,6 +24,8 @@ public class ModBlocks {
         () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
     public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
+    public static final RegistryObject<LiquidBlock> TIN_MOLTEN_BLOCK = BLOCKS.register("tin_molten_block",
+            () -> new LiquidBlock(ModFluids.SOURCE_TIN_MOLTEN, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -19,6 +19,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ModItems.TIN);
+        simpleItem(ModItems.TIN_MOLTEN_BUCKET);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
