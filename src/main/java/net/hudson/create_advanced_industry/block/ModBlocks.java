@@ -27,7 +27,7 @@ public class ModBlocks {
     public static final RegistryObject<LiquidBlock> TIN_MOLTEN_BLOCK = BLOCKS.register("tin_molten_block",
             () -> new LiquidBlock(ModFluids.SOURCE_TIN_MOLTEN, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
+    public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;

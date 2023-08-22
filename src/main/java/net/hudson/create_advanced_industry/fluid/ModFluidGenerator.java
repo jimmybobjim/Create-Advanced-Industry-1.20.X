@@ -1,5 +1,7 @@
+/*
 package net.hudson.create_advanced_industry.fluid;
 
+import com.simibubi.create.AllFluids;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -21,6 +23,29 @@ import static net.hudson.create_advanced_industry.fluid.ModFluids.FLUIDS;
 import static net.hudson.create_advanced_industry.item.ModItems.ITEMS;
 
 public class ModFluidGenerator {
+    private static RegistryObject<FlowingFluid> SOURCE;
+    private static RegistryObject<FlowingFluid> FLOWING;
+    private static RegistryObject<FluidType> TYPE;
+    private static RegistryObject<LiquidBlock> BLOCK;
+    private static ForgeFlowingFluid.Properties PROPERTIES;
+    private static RegistryObject<Item> BUCKET;
+
+    public ModFluidGenerator(RegistryObject<FlowingFluid> SOURCE, RegistryObject<FlowingFluid> FLOWING,
+                             RegistryObject<FluidType> TYPE, RegistryObject<LiquidBlock> BLOCK,
+                             ForgeFlowingFluid.Properties PROPERTIES, RegistryObject<Item> BUCKET) {
+        this.SOURCE = SOURCE;
+        this.FLOWING = FLOWING;
+        this.TYPE = TYPE;
+        this.BLOCK = BLOCK;
+        this.PROPERTIES = PROPERTIES;
+        this.BUCKET = BUCKET;
+    }
+
+    public static void create() {
+
+    }
+
+
     public static Map<String, Object> createFluid(String name, int tint, float[] vector, int slopeDistance, int levelDecreasePerBlock, boolean bucket) {
         Map<String, Object> toReturn = new HashMap<>();
 
@@ -60,3 +85,4 @@ public class ModFluidGenerator {
         return toReturn;
     }
 }
+*/

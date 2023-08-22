@@ -29,6 +29,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(pWriter, CASSITERITE_ORES, RecipeCategory.MISC, ModItems.TIN.get(), 0.25f, 200, "tin");
         oreBlasting(pWriter, CASSITERITE_ORES, RecipeCategory.MISC, ModItems.TIN.get(), 0.25f, 100, "tin");
 
+
+
+
         nineBlockStorageRecipes(pWriter, RecipeCategory.MISC, ModItems.TIN.get(), RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get(),
                 "create_advanced_industry:tin", "tin", "create_advanced_industry:tin_block", "tin");
 

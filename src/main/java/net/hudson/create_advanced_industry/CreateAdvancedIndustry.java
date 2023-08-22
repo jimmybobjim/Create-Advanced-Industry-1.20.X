@@ -2,11 +2,13 @@ package net.hudson.create_advanced_industry;
 
 import com.mojang.logging.LogUtils;
 import net.hudson.create_advanced_industry.block.ModBlocks;
+import net.hudson.create_advanced_industry.datagen.ModItemModelProvider;
 import net.hudson.create_advanced_industry.fluid.ModFluidTypes;
 import net.hudson.create_advanced_industry.fluid.ModFluids;
 import net.hudson.create_advanced_industry.item.ModCreativeModeTabs;
 import net.hudson.create_advanced_industry.item.ModItemProperties;
 import net.hudson.create_advanced_industry.item.ModItems;
+import net.hudson.create_advanced_industry.materials.Materials;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -35,8 +37,12 @@ public class CreateAdvancedIndustry {
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    public static final Materials MATERIALS = new Materials();
+
     public CreateAdvancedIndustry() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        //Materials.generate();
 
         ModCreativeModeTabs.register(modEventBus);
 
