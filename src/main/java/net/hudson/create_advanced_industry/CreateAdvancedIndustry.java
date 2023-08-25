@@ -42,7 +42,7 @@ public class CreateAdvancedIndustry {
     public CreateAdvancedIndustry() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        //Materials.generate();
+        MATERIALS.generate();
 
         ModCreativeModeTabs.register(modEventBus);
 

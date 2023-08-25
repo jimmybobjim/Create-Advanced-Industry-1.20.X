@@ -2,8 +2,8 @@ package net.hudson.create_advanced_industry.datagen;
 
 import com.simibubi.create.foundation.data.recipe.ProcessingRecipeGen;
 import net.hudson.create_advanced_industry.CreateAdvancedIndustry;
-import net.hudson.create_advanced_industry.datagen.CreateMod.CreateModRecipeGenerator;
-import net.hudson.create_advanced_industry.datagen.CreateMod.CreateRecipeTypes;
+import net.hudson.create_advanced_industry.datagen.CreateMod.CreateModPressingRecipeGenerator;
+import net.hudson.create_advanced_industry.datagen.CreateMod.CreateModRecipes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
@@ -35,22 +35,6 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
 
-
-        List<ProcessingRecipeGen> createRecipes = new ArrayList<>();
-        createRecipes.add(new CreateModRecipeGenerator(packOutput));
-
-        generator.addProvider(true, new DataProvider() {
-            @Override
-            public CompletableFuture<?> run(CachedOutput pOutput) {
-                return CompletableFuture.allOf(createRecipes.stream()
-                        .map(gen -> gen.run(pOutput))
-                        .toArray(CompletableFuture[]::new));
-            }
-
-            @Override
-            public String getName() {
-                return "test";
-            }
-        });
+        generator.addProvider(true, CreateModRecipes.register(packOutput));
     }
 }
